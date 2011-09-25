@@ -5,6 +5,9 @@ provides a pluggable backend system.
 
 
 # Installation
-## From github
-    pip install git+https://jonasgeiregat@github.com/jonasgeiregat/django-googleplus.git
-## Pip
+From github
+-----------
+    pip install git+https://<username>@github.com/jonasgeiregat/django-googleplus.git
+Pip
+-----------
+
