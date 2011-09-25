@@ -1,4 +1,14 @@
-.pyc
+# Ignore all hidden files
+.*
+# But allow .gitignore
+!.gitignore
+
+# Python specific
+*.pyc
+*.pyo
+
+# distutils generated files and dirs
+*egg-info
 dist
 build
 
