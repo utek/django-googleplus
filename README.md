@@ -18,10 +18,10 @@ From Pypi
 * Add AUTHENTICATION_BACKENDS to your settings.py file.
 
 
-    AUTHENTICATION_BACKENDS = (
+    `AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
         'googleplus.backends.GooglePlusBackend',
-    )
+    )`
 
 
 
