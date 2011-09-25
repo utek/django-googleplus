@@ -19,33 +19,42 @@ From Pypi
 * Add AUTHENTICATION_BACKENDS to your settings.py file.
 
 
-    ```python
-         AUTHENTICATION_BACKENDS = (
-        'django.contrib.auth.backends.ModelBackend',
-        'googleplus.backends.GooglePlusBackend',
-    )```
+```python
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'googleplus.backends.GooglePlusBackend',
+)
+```
 
 * Add your google account credentials to your settings.py file.
 You can get these settings from google [here](https://code.google.com/apis/console/).
 
-    GOOGLE_CLIENT_ID=<cllient-id> 
-    GOOGLE_CLIENT_SECRET=<client-secret>
+````python
+GOOGLE_CLIENT_ID=<cllient-id> 
+GOOGLE_CLIENT_SECRET=<client-secret>
+```
 
 * Setup the url to redirect after a successful login session.
 Put LOGIN_REDIRECT_URL in settings.py.
 
-    ```LOGIN_REDIRECT_URL='/account/profile'```
+```python
+LOGIN_REDIRECT_URL='/account/profile'
+```
 
 
 * Setup your url's. 
 ** Add the following line to your urls.py file.
 This will make localhost/googleplus/login the default url to login or register through googleplus services.
     
+```python
     url(r'googleplus', include('googleplus.urls'))
+```
 
 * Alternatively you can also create your own url setup by pointing your url to the googleplus.views.login_handler method.
 
+```python
     url(r'google/login', 'googleplus.views.login_handler')
+```
 
 # What about those registration backends ?
 Todo.
