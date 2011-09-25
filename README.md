@@ -9,7 +9,7 @@ you to create custom backends with custom workflows for registering new users.
 # Installation
 From github
 -----------
-    pip install git+https://<username>@github.com/jonasgeiregat/django-googleplus.git
+    pip install git+https://github.com/jonasgeiregat/django-googleplus
 From Pypi
 -----------
     A package will be released soon
