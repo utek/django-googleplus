@@ -13,7 +13,7 @@ From Pypi
     A package will be released soon
 
 
-# Setup
+# setup
 * Add 'googleplus' to INSTALLED_APPS in your settings.py file.
 * Add AUTHENTICATION_BACKENDS to your settings.py file.
 
