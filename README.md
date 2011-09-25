@@ -25,7 +25,16 @@ From Pypi
 
 * Add your google account credentials to your settings.py file.
 You can get these settings from google [here](https://code.google.com/apis/console/).
+
     `GOOGLE_CLIENT_ID=<cllient-id>
-    GOOGLE_CLIENT_SECRET=<client-secret>`
+     GOOGLE_CLIENT_SECRET=<client-secret>`
+
+* Setup the url to redirect after a successful login session.
+Put LOGIN_REDIRECT_URL in settings.py.
+
+    `LOGIN_REDIRECT_URL='/account/profile'`
+
+
+
 
 
