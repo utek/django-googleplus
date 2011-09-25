@@ -1,6 +1,7 @@
-Django-googleplus is a fork of django-custom-auths without facebook support.
+Django-googleplus is a fork of [django-custom-auths](https://github.com/subhranath/django-custom-auths)
+without facebook support.
 This django application solely provides googleplus user registration.
-The applications design is largely modeled after django-registration which,
+The applications design is largely modeled after [django-registration](https://bitbucket.org/ubernostrum/django-registration) which,
 provides a pluggable backend system. A pluggable backend registration system allows
 you to create custom backends with custom workflows for registering new users.
 
