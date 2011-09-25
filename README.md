@@ -19,10 +19,10 @@ From Pypi
 * Add AUTHENTICATION_BACKENDS to your settings.py file.
 
 
-    `AUTHENTICATION_BACKENDS = (
+    ```AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
         'googleplus.backends.GooglePlusBackend',
-    )`
+    )```
 
 * Add your google account credentials to your settings.py file.
 You can get these settings from google [here](https://code.google.com/apis/console/).
@@ -33,7 +33,7 @@ You can get these settings from google [here](https://code.google.com/apis/conso
 * Setup the url to redirect after a successful login session.
 Put LOGIN_REDIRECT_URL in settings.py.
 
-    `LOGIN_REDIRECT_URL='/account/profile'`
+    ```LOGIN_REDIRECT_URL='/account/profile'```
 
 
 * Setup your url's. 
