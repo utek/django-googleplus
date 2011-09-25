@@ -10,7 +10,7 @@ NAME="django-googleplus"
 DESCRIPTION=""" A plugable registration backend for googleplus. Closely modeled after django-registration"""
 AUTHOR="Jonas Geiregat"
 EMAIL="jonas@geiregat.org"
-URL="https://github.com/jonasgeiregat"
+URL="https://github.com/jonasgeiregat/django-googleplus"
 
 
 setup(name=NAME,

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
@@ -68,12 +69,12 @@ class DefaultBackend(object):
         class of this backend as the sender.
 
         """
-        username, email, password = kwargs['username'], kwargs['email'], kwargs['password1']
+        username, password = kwargs['username'], kwargs['password1']
         if Site._meta.installed:
             site = Site.objects.get_current()
         else:
             site = RequestSite(request)
-        new_user = User.models.create_user(username=username, password=password)
+        new_user = User.objects.create_user(username=username, password=password, email="")
 
         #signals.user_registered.send(sender=self.__class__,
                                      #user=new_user,

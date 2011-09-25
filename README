@@ -1,32 +1,10 @@
-Django auth backends without breaking each other.
-(django.contrib.auth + facebook auth + googleplus auth)
+Django-googleplus is a fork of django-custom-auths without facebook support.
+This django application solely provides googleplus user registration.
+The applications design is largely modeled after django-registration which,
+provides a pluggable backend system.
 
-To provide plugable django applications which integrates itself with
-Django's own authentication system, without breaking any existing django code.
 
-A demo Django project to illustrate the working and implementation of different
-custom authentication backends, in tandem with Django's own authentication
-system, is included.
-
-THIS IS A WORK IN PROGRESS, AND CURRENTLY NOT DOCUMENTED.
-
-Currently supported, simultaneous auth backends:
--------------------------------------------------
-- Usual Django login
-- Login with Facebook (using Facebook Graph API)
-- Login with Google+
-
-Installing (Tryout)
--------------------
-Just clone this repo and hit 'runserver', to try this out.
-
-For Facebook app:
-i) Create a facebook app from the facebook developers site (with redirect_uri as '/facebook/login/')
-ii) Update settings.py with 'FACEBOOK_APP_ID' and 'FACEBOOK_APP_SECRET'.
-
-For Google+ app:
-i) Create a new application from the Google APIs Console (https://code.google.com/apis/console/),
-with redirect uri specified to '/googleplus/login/' of your server.
-ii) Use the 'client_id' and 'client_secret' obtained from step i, and make
-appropriate changes in settings.py to update 'GOOGLEPLUS_CLIENT_ID' and
-'GOOGLEPLUS_CLIENT_SECRET'.
+# Installation
+## From github
+    pip install git+https://jonasgeiregat@github.com/jonasgeiregat/django-googleplus.git
+## Pip
