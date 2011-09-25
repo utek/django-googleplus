@@ -25,17 +25,23 @@ def api(path, params, method="GET"):
     
     return response_dict
 
-def get_registration_backend():
+def get_registration_backend(backend_str=None):
     """ 
     Get's the registration backend instance, the default backend if no backend is defined
     by settings.GOOGLEPLUS_REGISTRATION_BACKEND.
+    If backend_str takes the overhand of settings.GOOGLEPLUS_REGISTRATION_BACKEND if defined.
     """
 
     backend = None
     # Used when the default backend needs to be loaded, overwritten elsewhise 
     module, cls = "googleplus.backends.default", "DefaultBackend"
+    import pdb
+    pdb.set_trace()
 
-    if hasattr(settings, 'GOOGLEPLUS_REGISTRATION_BACKEND'):
+    if backend_str:
+        i = backend_str.rfind('.')
+        module, cls = backend_str[:i], backend_str[i+1:]
+    elif hasattr(settings, 'GOOGLEPLUS_REGISTRATION_BACKEND'):
         backend_str = getattr(settings, 'GOOGLEPLUS_REGISTRATION_BACKEND')
         if backend_str:
             i = backend_str.rfind('.')
@@ -50,7 +56,7 @@ def get_registration_backend():
         try:
             backend = getattr(mod, cls)()
         except AttributeError:
-            raise ImproperlyConfigured("Module %s does not define a registration backend named: %s" % (module, attr))
+            raise ImproperlyConfigured("Module %s does not define a registration backend named: %s" % (module, cls))
     else:
         raise ImproperlyConfigured("Error loading registration backend %s. GOOGLE_REGISTRATION_BACKEND is \
                                     improperly configured." % backend_str)

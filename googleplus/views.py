@@ -23,7 +23,7 @@ REDIRECT_URI = urlparse.urljoin(
         'http://localhost:8000', GOOGLEPLUS_LOGIN_URL
 )
 
-def login_handler(request, backend):
+def login_handler(request, backend=None):
     """
     Google+ OAuth2 login handler.
     """
@@ -68,7 +68,7 @@ def login_handler(request, backend):
         
         profile = utils.api('people/me', {'access_token': access_token})
         
-        googleplus_user = _create_or_update_googleplus_user(request, profile, access_token, expires_in)
+        googleplus_user = _create_or_update_googleplus_user(request, profile, access_token, expires_in, backend)
         
         user = authenticate(googleplus_user=googleplus_user)
         if user is not None:
@@ -93,7 +93,7 @@ def login_handler(request, backend):
             urllib.urlencode(params)
         )
 
-def _create_or_update_googleplus_user(request, profile, access_token, expires_in):
+def _create_or_update_googleplus_user(request, profile, access_token, expires_in, backend):
     """Creates or updates a Google+ user profile in local database.
     """
     user_is_created = False
@@ -132,7 +132,7 @@ def _create_or_update_googleplus_user(request, profile, access_token, expires_in
         first_name, last_name = _get_first_and_last_name(profile['displayName'])
 
         # Setup the backend
-        backend = get_registration_backend()
+        backend = get_registration_backend(backend)
         form_class = backend.get_form_class(request)
 
         form = form_class(data=data, files=request.FILES)
