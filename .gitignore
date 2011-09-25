@@ -7,6 +7,9 @@
 *.pyc
 *.pyo
 
+# Project specific
+
+
 # distutils generated files and dirs
 *egg-info
 dist
