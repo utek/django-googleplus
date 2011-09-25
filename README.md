@@ -8,6 +8,19 @@ provides a pluggable backend system.
 From github
 -----------
     pip install git+https://<username>@github.com/jonasgeiregat/django-googleplus.git
-Pip
+From Pypi
 -----------
+    A package will be released soon
+
+
+# Setup
+* Add 'googleplus' to INSTALLED_APPS in your settings.py file.
+* Add AUTHENTICATION_BACKENDS to your settings.py file.
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'googleplus.backends.GooglePlusBackend',
+)
+
+
 
