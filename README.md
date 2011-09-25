@@ -19,7 +19,8 @@ From Pypi
 * Add AUTHENTICATION_BACKENDS to your settings.py file.
 
 
-    ```AUTHENTICATION_BACKENDS = (
+    ```python
+         AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
         'googleplus.backends.GooglePlusBackend',
     )```
@@ -42,7 +43,7 @@ This will make localhost/googleplus/login the default url to login or register t
     
     url(r'googleplus', include('googleplus.urls'))
 
-** Alternatively you can also create your own url setup by pointing your url to the googleplus.views.login_handler method.
+* Alternatively you can also create your own url setup by pointing your url to the googleplus.views.login_handler method.
 
     url(r'google/login', 'googleplus.views.login_handler')
 
