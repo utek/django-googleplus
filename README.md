@@ -23,5 +23,9 @@ From Pypi
         'googleplus.backends.GooglePlusBackend',
     )`
 
+* Add your google account credentials to your settings.py file.
+You can get these settings from google [here](https://code.google.com/apis/console/).
+    `GOOGLE_CLIENT_ID=<cllient-id>
+    GOOGLE_CLIENT_SECRET=<client-secret>`
 
 
