@@ -17,6 +17,7 @@ From Pypi
 * Add 'googleplus' to INSTALLED_APPS in your settings.py file.
 * Add AUTHENTICATION_BACKENDS to your settings.py file.
 
+
     AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
         'googleplus.backends.GooglePlusBackend',
